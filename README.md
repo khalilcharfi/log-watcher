@@ -2,7 +2,7 @@
 
 A Go-based utility for watching log files and directories for changes. The tool supports filtering log entries, prettifying output with color-coding, and handling log files in JSON format.
 
-![go](https://img.shields.io/static/v1?label=Golang+1.20&labelColor=34a1eb&message=Go&color=000000&logo=go&logoColor=ffffff&style=flat-square) 
+![go](https://img.shields.io/static/v1?label=Golang+1.23&labelColor=34a1eb&message=Go&color=000000&logo=go&logoColor=ffffff&style=flat-square) 
 ![go](https://img.shields.io/static/v1?label=Channels&labelColor=34a1eb&message=Go&color=000000&logo=go&logoColor=ffffff&style=flat-square)
 
 <p align="center">
@@ -19,7 +19,7 @@ A Go-based utility for watching log files and directories for changes. The tool 
 
 ## Requirements
 
-- **Go 1.20**
+- **Go 1.23**
 
 ## How to Install it:
 

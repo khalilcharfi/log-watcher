@@ -3,7 +3,6 @@ package main
 import (
 	"encoding/json"
 	"fmt"
-	"sync"
 )
 
 func PrintWithColor(file, text string) {

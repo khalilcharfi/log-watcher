@@ -7,7 +7,7 @@ command_exists() {
 
 # Function to check Go version compatibility
 check_go_version() {
-    REQUIRED_GO_VERSION="1.20"
+    REQUIRED_GO_VERSION="1.23"
     INSTALLED_GO_VERSION=$(go version | awk '{print $3}' | sed 's/go//')
 
     if [ "$(printf '%s\n' "$REQUIRED_GO_VERSION" "$INSTALLED_GO_VERSION" | sort -V | head -n1)" = "$REQUIRED_GO_VERSION" ]; then 
@@ -79,15 +79,22 @@ else
     # Install Go (example assumes Ubuntu/Debian or macOS with Homebrew)
     if [ "$OS" = "Linux" ]; then
         if [ "$ARCH" = "x86_64" ]; then
-            wget https://golang.org/dl/go1.20.linux-amd64.tar.gz
-            sudo tar -C /usr/local -xzf go1.20.linux-amd64.tar.gz
+            curl -LO https://go.dev/dl/go1.23.0.linux-amd64.tar.gz
+            sudo tar -C /usr/local -xzf go1.23.0.linux-amd64.tar.gz
         elif [ "$ARCH" = "arm64" ]; then
-            wget https://golang.org/dl/go1.20.linux-arm64.tar.gz
-            sudo tar -C /usr/local -xzf go1.20.linux-arm64.tar.gz
+            curl -LO https://go.dev/dl/go1.23.0.linux-arm64.tar.gz
+            sudo tar -C /usr/local -xzf go1.23.0.linux-arm64.tar.gz
         fi
         export PATH=$PATH:/usr/local/go/bin
     elif [ "$OS" = "Darwin" ]; then
-        brew install go
+        if [ "$ARCH" = "x86_64" ]; then
+            curl -LO https://go.dev/dl/go1.23.0.darwin-amd64.tar.gz
+            sudo tar -C /usr/local -xzf go1.23.0.darwin-amd64.tar.gz
+        elif [ "$ARCH" = "arm64" ]; then
+            curl -LO https://go.dev/dl/go1.23.0.darwin-arm64.tar.gz
+            sudo tar -C /usr/local -xzf go1.23.0.darwin-arm64.tar.gz
+        fi
+        export PATH=$PATH:/usr/local/go/bin
     fi
 
     # Verify installation
