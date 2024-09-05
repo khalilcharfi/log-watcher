@@ -26,18 +26,21 @@ A Go-based utility for watching log files and directories for changes. The tool 
 First, clone this repository to your machine:
 
 ~~~bash
-git clone https://github.com/Philipelima/log-watcher.git
+git clone https://github.com/khalilcharfi/log-watcher.git
 ~~~
 
-Next, run the following command to build the application:
+Next, run the following command to build and install the application:
 
 ~~~bash
-GOOS={os} GOARCH={arch} go build -o log-watcher
+chmod +x install.sh
+./install.sh
 ~~~
 
-Replace `{os}` with your target operating system (e.g., `linux`, `windows`, `darwin`) and `{arch}` with your architecture (e.g., `amd64`, `arm64`).
-
-This will create an executable named `log-watcher` in your project directory.
+This script will:
+- Check if Go is installed and ensure it’s version 1.20 or higher.
+- Download and install Go if it’s not already installed.
+- Build the `log-watcher` binary for your system.
+- Optionally, add an alias for `log-watcher` to your bash or zsh shell.
 
 ## How to Use it:
 
